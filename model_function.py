@@ -5,7 +5,7 @@ from skimage.filters import sobel
 import joblib
 from sklearn import metrics
 
-RF_model = joblib.load('C:\\Users\\mohdk\\OneDrive\\Desktop\\CSI\\Project\\my_model.pkl')
+RF_model = joblib.load('my_model.pkl')
 
 def feature_extractor(dataset):
     x_train = dataset
