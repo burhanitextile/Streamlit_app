@@ -3,9 +3,13 @@ import pandas as pd
 import cv2
 from skimage.filters import sobel
 import joblib
+from sklearn.preprocessing import LabelEncoder
 from sklearn import metrics
+import glob
+import os
 
-RF_model = joblib.load('my_model.pkl')
+pre_model = joblib.load('my_model.pkl')
+le = joblib.load('le.pkl')
 
 def feature_extractor(dataset):
     x_train = dataset
@@ -54,7 +58,7 @@ def feature_extractor(dataset):
     return image_dataset
 
 
-def prediction(uploaded_file):
+def prediction(uploaded_file, RF_model=pre_model, le=le):
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     img = cv2.resize(img, (128, 128))
@@ -69,7 +73,8 @@ def prediction(uploaded_file):
 
     # probability
     probs = RF_model.predict_proba(r_for_RF)[0]
-    labels = ["Cat", "Dog"]
+    labels = list(le.classes_)
+
     for label, prob in zip(labels ,probs):
         print(f"{label}: {prob:.2f}")
 
