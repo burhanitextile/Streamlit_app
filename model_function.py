@@ -8,8 +8,8 @@ from sklearn import metrics
 import glob
 import os
 
-pre_model = joblib.load('my_model.pkl')
-le = joblib.load('le.pkl')
+pre_model = joblib.load('model.pkl')
+le = joblib.load('lebal_encoder.pkl')
 
 def feature_extractor(dataset):
     x_train = dataset
@@ -79,4 +79,5 @@ def prediction(uploaded_file, RF_model=pre_model, le=le):
         print(f"{label}: {prob:.2f}")
 
     return labels[int(image_prediction)], (labels, probs)
+
 
