@@ -34,7 +34,7 @@ def image_uploading(tmp_dir):
                 train_images.append(img)
                 train_labels.append(label)
                 count += 1
-            if count == 600:
+            if count == 200:
                 break
 
     return train_images, train_labels
