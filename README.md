@@ -1,18 +1,99 @@
-Cat vs Dog Image Classification Web App – Streamlit Project
-Overview
-This project demonstrates an end-to-end machine learning web application built using Streamlit. The app allows users to upload an image, and a pre-trained model classifies it as either a Cat 🐱 or a Dog 🐶.
+# 🧠 Streamlit Image Classification App
 
-The model is a Random Forest classifier trained on image features. The web interface is user-friendly and deployed publicly using Streamlit Community Cloud.
+This is a user-friendly, web-based image classification application built using **Streamlit**. It allows users to:
 
-Features
-Image Uploader: Users can upload .jpg, .jpeg, or .png images
+* Upload zipped image datasets (organized by class folders)
+* Choose test/train split
+* Preprocess images
+* Extract features (using **Gabor** and **Sobel** filters)
+* Train a **Random Forest** model
+* Evaluate using test data (accuracy & confusion matrix)
+* Classify new uploaded images using the trained model
 
-Model Prediction: The app predicts whether the image is a Cat or Dog
+---
 
-nteractive Graphs: Displays model confidence scores with an interactive bar chart using Plotly
+## 🚀 Live App
 
-🌐 Publicly Accessible Deployment
+👉 [Click here to access the app](https://image-classification-project.streamlit.app/)
 
-🔗 Web App URL
-You can access the deployed app here:
-👉 https://img-classification-ml.streamlit.app/
+---
+
+<img width="1536" height="1024" alt="ChatGPT Image Jul 23, 2025, 02_26_37 PM" src="https://github.com/user-attachments/assets/299438b0-bd2f-45f6-9e63-794f962c12db" />
+
+
+## 📁 Features
+
+* 🔄 Dynamic preprocessing
+* 🔍 Feature extraction using Gabor + Sobel filters
+* 🌲 Model training with Random Forest (n\_estimators = 70)
+* 📊 Accuracy evaluation and confusion matrix visualization
+* 🖼️ Upload your own image to test the trained model
+* 🧠 Option to train your custom model with your dataset
+
+---
+
+## 🧪 Sample Dataset Structure
+
+```
+zip_file/
+├── Class1/
+│   ├── image1.jpg
+│   ├── image2.jpg
+├── Class2/
+│   ├── image3.jpg
+│   └── image4.jpg
+```
+
+---
+
+## ⚙️ Tech Stack
+
+* Python
+* Streamlit
+* Scikit-learn
+* OpenCV
+* Pandas / NumPy
+* Matplotlib / Seaborn
+* Joblib
+
+---
+
+## 📦 Setup Instructions
+
+```bash
+# 1. Clone the repo
+https://github.com/YOUR_GITHUB_USERNAME/Streamlit_app
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run locally
+streamlit run app.py
+```
+
+---
+
+## 🧠 Model Training Workflow
+
+1. Upload zipped image dataset
+2. Set test data split
+3. Preprocess image data
+4. Extract features
+5. Train model
+6. Evaluate model
+7. Use classifier
+
+---
+
+## 📌 Notes
+
+* Streamlit Cloud supports temporary model saving (during session)
+* Works with `.jpg`, `.jpeg`, `.png` images
+* Zipped dataset should contain folders (each representing a class)
+
+---
+
+## 🙌 Acknowledgements
+
+* Built using Streamlit and Scikit-learn
+* Designed for learning & demo purpose by \Taher Ali
