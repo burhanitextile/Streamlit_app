@@ -16,7 +16,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Define pages
-pages = ["Image Classifier", "Model Trainer", "About"]
+pages = ["Model Trainer", "Image Classifier", "About"]
 current = st_navbar(pages)
 
 # Render content based on selection
@@ -26,7 +26,10 @@ if current == "Image Classifier":
     st.set_page_config(page_title="Image Classification", layout="centered")
 
     st.title("Image Classification App")
-    st.write("Upload an image of animal (🐱Cat and 🐶Dog) and let the model predict what it is!")
+    st.write("""Welcome to the Image Classifier! 
+            You can upload an image of an animal (🐱Cat and 🐶Dog), and our model will instantly tell you which one it is.
+            If you've trained your own custom model using the Model Trainer page, you can also test it here to see how well it performs.
+            Just upload, click, and classify! 🐾📷""")
 
     # Initialize photo state
     if "photo" not in st.session_state:
@@ -254,4 +257,7 @@ elif current == "Model Trainer":
 
 else:
     st.write("ℹ️ About page")
+
+
+
 
