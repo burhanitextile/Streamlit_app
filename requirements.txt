@@ -45,6 +45,7 @@ seaborn==0.13.2
 six==1.17.0
 smmap==5.0.2
 st-theme==1.2.3
+streamlit==1.46.1
 streamlit-community-navigation-bar==4.7.9
 streamlit-navigation-bar==3.3.0
 tenacity==9.1.2
